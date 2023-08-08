@@ -1,0 +1,16 @@
+{
+  "name": "gaming_website",
+  "version": "1.0.0",
+  "description": "Creating a gaming website with a database powered by Firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^8.6.8",
+    "uglify-js": "^3.17.4"
+  }
+}
