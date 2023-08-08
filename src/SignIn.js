@@ -37,6 +37,7 @@ signIn.addEventListener('submit', (e) => {
     signInWithEmailAndPassword(auth, email, password)
         .then(cred => {
             console.log(cred.user)
+            window.location.href = "./Main_Page.html";
         })
 });
 
