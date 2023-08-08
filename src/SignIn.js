@@ -1,8 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js';
 
 
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
 
 
 
@@ -29,21 +28,26 @@ const auth = getAuth();
 
 
 
-
-
-const signUpForm = document.querySelector(".signup");
-signUpForm.addEventListener('submit', (e) =>{
+const signIn = document.querySelector("#signIn")
+signIn.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const email = signUpForm.email.value
-    const password = signUpForm.password.value
-
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((cred)=>{
-            console.log("User created: ", cred.user)
-            signUpForm.reset()
-        })
-        .catch((err)=>{
-            console.log(err)
+    const email = signIn['signIn-email'].value
+    const password = signIn['signIn-password'].value
+    signInWithEmailAndPassword(auth, email, password)
+        .then(cred => {
+            console.log(cred.user)
         })
 });
+
+
+
+onAuthStateChanged( auth, user =>{
+    if(user !== null){
+        console.log("Signed in!")
+    }
+    else{
+        console.log("not signed in")
+    }
+})
+
