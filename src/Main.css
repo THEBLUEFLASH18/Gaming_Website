@@ -2,6 +2,12 @@ Body{
     display: block;
     margin: 0;
     background-color: black;
+    border: dotted red;
+}
+
+header {
+    width: 100%;
+    height: 55px;
 }
 
 nav ul {
