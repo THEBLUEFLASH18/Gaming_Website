@@ -19,7 +19,7 @@ const auth = getAuth();
 onAuthStateChanged( auth, user =>{
     if (user && user.email) {
         const profile = document.querySelector('.profile');
-        profile.innerHTML = user.email;
+        profile.innerText = user.email;
     } else {
         console.log("not signed in or no email available");
     }
