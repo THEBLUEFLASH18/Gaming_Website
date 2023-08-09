@@ -7,6 +7,7 @@ Body {
     margin: 0;
     background-color: #04ACFA;
 }
+
 header {
     width: 100%;
     height: 55px;
@@ -55,6 +56,10 @@ button:active {
 a {
     text-decoration: none;
     color: black;
+    
+}
+a:hover {
+    color: white;
 }
 
 .chat-container {

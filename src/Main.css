@@ -1,7 +1,7 @@
 Body{
     display: block;
     margin: 0;
-    background-color: black;
+    background-color: #04ACFA;
     border: dotted red;
 }
 
@@ -34,14 +34,14 @@ button {
    
 button:hover {
     letter-spacing: 3px;
-    background-color: #04ACFA;
+    background-color: black;
     color: hsl(0, 0%, 100%);
-    box-shadow: #04ACFA;
+    box-shadow: black;
 }
    
 button:active {
     letter-spacing: 3px;
-    background-color: #04ACFA;
+    background-color: black;
     color: hsl(0, 0%, 100%);
     box-shadow: #04ACFA;
     transform: translateY(10px);
@@ -51,5 +51,9 @@ button:active {
 a {
     text-decoration: none;
     color: black;
+}
+
+a:hover {
+    color: white;
 }
 
