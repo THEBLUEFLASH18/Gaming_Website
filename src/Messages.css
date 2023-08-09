@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #04ACFA;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    -webkit-text-stroke: 2px white; /* width and color of the stroke */
+    color: #000000; /* same as background for better visibility */
+}
+
+.fa-solid {
+    text-shadow: 
+        -2px -2px 0 #FFF,  
+        2px -2px 0 #FFF,
+        -2px 2px 0 #FFF,
+        1px 1px 0 #FFF;
+}
+
+
+
+.title_container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #E9E9EA;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.send-button {
+    width: 15%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #04ACFA;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #0289c7;
+}

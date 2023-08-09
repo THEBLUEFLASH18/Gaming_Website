@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
 import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-messaging.js";
-
+import {getFirestore} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
 const firebaseConfig = {
   apiKey: "AIzaSyAy4ZcpC1dFu31INK637buxdc1trjStJIA",
   authDomain: "gaming-tournament-18.firebaseapp.com",
@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const database = getFirestore()
 
 const messaging = getMessaging();
 getToken(messaging, {vapidKey: "BIAe4vqaeQUuTGvRS4CIMS2kI1hf4pPwY07UZESAviGFJs7e7csmjU_esdTaxKwIKDeqTRNyu8Kv7xZb5wf-snY"})
@@ -49,4 +50,6 @@ getToken(messaging, { vapidKey: "BIAe4vqaeQUuTGvRS4CIMS2kI1hf4pPwY07UZESAviGFJs7
 onMessage(messaging, (payload) => {
     console.log('Message received. ', payload);
     // ...
-  });
+});
+
+
