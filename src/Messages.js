@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js';
 import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-messaging.js";
-import {getFirestore} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
+import {getFirestore, collection, addDoc, query, orderBy, onSnapshot} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
 const firebaseConfig = {
   apiKey: "AIzaSyAy4ZcpC1dFu31INK637buxdc1trjStJIA",
   authDomain: "gaming-tournament-18.firebaseapp.com",
@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const database = getFirestore()
+const db = getFirestore()
 
 onAuthStateChanged( auth, user =>{
     if (user && user.email) {
@@ -63,5 +63,11 @@ onMessage(messaging, (payload) => {
 });
 
 
+const sendButton = document.querySelector('.send-button');
+const newMessage = document.querySelector('.message-input');
+const messageBoard = document.querySelector('.chat-box');
 
 
+sendButton.addEventListener('click', ()=>{
+  messageBoard.innerHTML = newMessage.value;
+})
